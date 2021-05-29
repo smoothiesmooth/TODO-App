@@ -1,0 +1,22 @@
+<div>
+    <ul class="todos_ul" *ngIf="appService.todoList.length; else emptyList">
+  
+        <li *ngFor="let todo of appService.todoList; let i = index">
+  
+          <label for="check{{i}}">
+  
+            <input type="checkbox" [checked]="todo.state" (change)="todo.state=!todo.state" id="check{{i}}">
+  
+            {{ todo.name }}
+  
+          </label>
+  
+          <button (click)="todoDelete(todo.id)" class="buttonAct">&times;</button>
+  
+        </li>
+  
+    </ul>
+    <ng-template #emptyList>
+      <span id="empty">Todo list is empty!</span>
+    </ng-template>
+  </div>   

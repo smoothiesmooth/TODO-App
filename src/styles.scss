@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@import './utils.scss';
+
+body {
+    transition: .2s;
+    margin: 0;
+    height: 100vh;
+    background-color: var(--bgColor);
+}
+li {
+    background-color: var(--bgLi);
+    border-color: var(--border);
+}
+h1, label, span {
+    color: var(--fontColor);
+}
+.form {
+    background-color: var(--bgLi);
+    input {
+        background-color: var(--bgInput);
+        border: 1px solid var(--border);
+        border-radius: .2em;
+        color: var(--fontColor);
+
+    }
+    input::placeholder {
+        color: var(--plch)
+    }
+    border-color: var(--border);
+}
+.buttonAct {
+    font-family: Calibri;
+    font-weight: 600;
+    color: #e7e7e7;
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-width: 0;
+    background-color: var(--buttonColor);
+    user-select: none;
+}
+.buttonAct:active {
+    background-color: var(--buttonPressed);
+}

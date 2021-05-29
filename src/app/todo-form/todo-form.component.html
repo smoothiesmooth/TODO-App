@@ -1,0 +1,12 @@
+<div class="form">
+
+    <input 
+        [(ngModel)]="title"
+        type="text"
+        placeholder="Type todo here..."
+        (keydown.enter)="todoCreate()"
+    >
+
+    <button (click)="todoCreate()" class="buttonAct">+</button>
+
+</div>

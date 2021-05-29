@@ -1,0 +1,18 @@
+.wrapper {
+    h1 {
+        font-family: Calibri;
+        font-size: 4em;
+        font-weight: 300;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-position: under;
+        user-select: none;
+    }
+    app-todo-form {
+        margin-top: 20px;
+    }
+    display: grid;
+    justify-content: center;
+
+}    

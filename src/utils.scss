@@ -1,0 +1,22 @@
+/* Util scss file */
+
+html[data-theme='light'] {
+    --bgColor: #fff;
+    --bgLi: #fff;
+    --fontColor: #000;
+    --buttonColor: #969696;
+    --buttonPressed: #444444;
+    --bgInput: #fff;
+    --border: #909090;
+    --plch: #777;
+}
+html[data-theme='dark'] {
+    --bgColor: #252525;
+    --bgLi: #353434;
+    --fontColor: #fff;
+    --buttonColor: #444444;
+    --buttonPressed: #969696;
+    --bgInput: #777;
+    --border: #555;
+    --plch: #fff;
+}
