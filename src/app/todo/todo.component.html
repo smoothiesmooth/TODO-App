@@ -5,7 +5,7 @@
   
           <label for="check{{i}}">
   
-            <input type="checkbox" [checked]="todo.state" (change)="todo.state=!todo.state" id="check{{i}}">
+            <input type="checkbox" [checked]="todo.state" (change)="todo.state=!todo.state; changeState()" id="check{{i}}">
   
             {{ todo.name }}
   

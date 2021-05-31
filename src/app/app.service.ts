@@ -21,10 +21,12 @@ export class AppService {
 
   todoDelete(id:number) {
     this.todoList = this.todoList.filter(todo => todo.id !== id)
+    localStorage.setItem('todos', JSON.stringify(this.todoList))
   }
 
   todoCreate(todo:any) {
     this.todoList.push(todo)
+    localStorage.setItem('todos', JSON.stringify(this.todoList))
   }
 
   switchTheme() {
@@ -46,6 +48,10 @@ export class AppService {
         this.tChecked = this.theme === 'dark'
       }
 
+  }
+
+  changeState() {
+    localStorage.setItem('todos', JSON.stringify(this.todoList))
   }
 
 }

@@ -11,10 +11,18 @@ export class TodoComponent implements OnInit {
   constructor(public appService: AppService) { }
 
   ngOnInit(): void {
+    let todos = localStorage.getItem("todos")
+    if (typeof todos === 'string') {
+      this.appService.todoList = JSON.parse(todos)
+    }
   }
 
   todoDelete(id:number) {
     this.appService.todoDelete(id)
+  }
+
+  changeState() {
+    this.appService.changeState()
   }
 
 }
