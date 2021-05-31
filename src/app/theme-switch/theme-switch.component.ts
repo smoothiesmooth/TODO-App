@@ -7,17 +7,24 @@ import { AppService } from 'src/app/app.service';
   styleUrls: ['./theme-switch.component.scss']
 })
 export class ThemeSwitchComponent implements OnInit {
+  tChecked: boolean | undefined;
 
-  constructor(public appService: AppService) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
   
     this.appService.firstTime()
 
+    this.getCheck()
+
   }
 
   switchTheme() {
     this.appService.switchTheme()
+  }
+
+  getCheck() {
+    this.tChecked = this.appService.tChecked
   }
 
 }

@@ -1,13 +1,13 @@
 <div>
-    <ul class="todos_ul" *ngIf="appService.todoList.length; else emptyList">
+    <ul class="todos_ul" *ngIf="appService.todoList?.length; else emptyList">
   
         <li *ngFor="let todo of appService.todoList; let i = index">
   
-          <label for="check{{i}}">
+          <label for="check{{i}}" class="todoLabel" [class.done]="todo.state">
   
             <input type="checkbox" [checked]="todo.state" (change)="todo.state=!todo.state; changeState()" id="check{{i}}">
   
-            {{ todo.name }}
+            {{ todo.content }}
   
           </label>
   
@@ -19,4 +19,4 @@
     <ng-template #emptyList>
       <span id="empty">Todo list is empty!</span>
     </ng-template>
-  </div>   
+  </div>

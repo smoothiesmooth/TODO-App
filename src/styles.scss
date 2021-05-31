@@ -10,8 +10,12 @@ li {
     background-color: var(--bgLi);
     border-color: var(--border);
 }
-h1, label, span {
+h1, label, span, h6 {
     color: var(--fontColor);
+}
+.done {
+    text-decoration: line-through;
+    text-decoration-color: var(--fontColor);
 }
 .form {
     background-color: var(--bgLi);

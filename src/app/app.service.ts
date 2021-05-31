@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface Todo{
-  name: string,
+  content: string,
   state: boolean,
   id: number
 }
@@ -24,9 +24,13 @@ export class AppService {
     localStorage.setItem('todos', JSON.stringify(this.todoList))
   }
 
-  todoCreate(todo:any) {
-    this.todoList.push(todo)
-    localStorage.setItem('todos', JSON.stringify(this.todoList))
+  todoCreate(todo:Todo) {
+    if (todo.content) {
+      this.todoList.push(todo)
+      localStorage.setItem('todos', JSON.stringify(this.todoList))
+    } else {
+      alert("Your note is empty!")
+    }
   }
 
   switchTheme() {
@@ -37,17 +41,15 @@ export class AppService {
       document.documentElement.dataset.theme = 'light'
       localStorage.setItem('theme', 'light')
     }
-
     }
 
-    firstTime() {
-      if ( !localStorage.getItem('theme') ) {
-        localStorage.setItem('theme', 'light')
-      } else {
-        document.documentElement.dataset.theme = this.theme
-        this.tChecked = this.theme === 'dark'
-      }
-
+  firstTime() {
+    if ( !localStorage.getItem('theme') ) {
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.documentElement.dataset.theme = this.theme
+      this.tChecked = this.theme === 'dark'
+    }
   }
 
   changeState() {

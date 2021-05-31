@@ -9,13 +9,13 @@ import { AppService } from '../app.service';
 export class TodoFormComponent implements OnInit {
   title: string = "";
 
-  constructor(public appService: AppService) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
   }
 
   todoCreate() {
-    this.appService.todoCreate({name:this.title, id:(this.appService.todoList.length + 1), state:false})
+    this.appService.todoCreate({content:this.title, id:(this.appService.todoList.length + 1), state:false})
     this.title = ""
   }
 
