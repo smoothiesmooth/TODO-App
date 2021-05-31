@@ -18,6 +18,9 @@ div {
         justify-content: space-between;
         border-radius: 0.8em;
         margin-bottom: 20px;
+        label {
+           word-break: break-all;
+        }
         input {
             cursor: pointer;
         }
